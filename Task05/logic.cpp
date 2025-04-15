@@ -12,5 +12,15 @@
 #include "logic.h"
 
 int sum_absolute_values_of_negative_elements(int* array, int size) {
-	return -1;
+
+	if (array == nullptr || size <= 0)
+	{
+		return 0;
+	}
+
+	int neg = array[0] < 0 ? abs(array[0]) : 0;
+
+
+	return neg + sum_absolute_values_of_negative_elements(array + 1, size - 1);
+
 }
